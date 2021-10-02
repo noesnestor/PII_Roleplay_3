@@ -1,12 +1,8 @@
 using System.Collections.Generic;
 namespace RoleplayGame
 {
-    public class Dwarf: ICharacter
+    public class Dwarf: Character
     {
-        private int health = 100;
-
-        private List<IItem> items = new List<IItem>();
-
         public Dwarf(string name)
         {
             this.Name = name;
@@ -15,53 +11,7 @@ namespace RoleplayGame
             this.AddItem(new Helmet());
         }
 
-        public string Name { get; set; }
-        
-        public int AttackValue
-        {
-            get
-            {
-                int value = 0;
-                foreach (IItem item in this.items)
-                {
-                    if (item is IAttackItem)
-                    {
-                        value += (item as IAttackItem).AttackValue;
-                    }
-                }
-                return value;
-            }
-        }
-
-        public int DefenseValue
-        {
-            get
-            {
-                int value = 0;
-                foreach (IItem item in this.items)
-                {
-                    if (item is IDefenseItem)
-                    {
-                        value += (item as IDefenseItem).DefenseValue;
-                    }
-                }
-                return value;
-            }
-        }
-
-        public int Health
-        {
-            get
-            {
-                return this.health;
-            }
-            private set
-            {
-                this.health = value < 0 ? 0 : value;
-            }
-        }
-
-        public void ReceiveAttack(int power)
+        public override void ReceiveAttack(int power)
         {
             if (this.DefenseValue < power)
             {
@@ -69,17 +19,17 @@ namespace RoleplayGame
             }
         }
 
-        public void Cure()
+        public override void Cure()
         {
             this.Health = 100;
         }
 
-        public void AddItem(IItem item)
+        public override void AddItem(IItem item)
         {
             this.items.Add(item);
         }
 
-        public void RemoveItem(IItem item)
+        public override void RemoveItem(IItem item)
         {
             this.items.Remove(item);
         }

@@ -16,16 +16,16 @@ namespace Program
 
             Dwarf gimli = new Dwarf("Gimli");
 
-            Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
-            Console.WriteLine($"Gandalf attacks Gimli with ⚔️ {gandalf.AttackValue}");
+            Console.WriteLine($"Gimli has {gimli.Health} HP.");
+            Console.WriteLine($"Gandalf attacks Gimli with {gandalf.AttackValue} Atk.");
 
             gimli.ReceiveAttack(gandalf.AttackValue);
 
-            Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
+            Console.WriteLine($"Gimli has {gimli.Health} HP.");
 
             gimli.Cure();
 
-            Console.WriteLine($"Someone cured Gimli. Gimli now has ❤️ {gimli.Health}");
+            Console.WriteLine($"Someone cured Gimli. Gimli now has {gimli.Health} HP!");
         }
     }
 }
