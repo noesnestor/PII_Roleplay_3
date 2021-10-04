@@ -6,7 +6,6 @@ namespace RoleplayGame
         public HeroWizard(string name)
         {
             this.Name = name;
-            
             this.AddItem(new Staff());
         }
 
@@ -48,6 +47,10 @@ namespace RoleplayGame
         public override void RemoveItem(MagicalItem item)
         {
             this.magicalItems.Remove(item);
+        }
+        public override void AddToEncounter()
+        {
+            MagicHeroes.magicHeroes.Add(this);
         }
     }
 }

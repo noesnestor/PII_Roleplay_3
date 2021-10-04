@@ -16,6 +16,9 @@ namespace Program
 
             Enemies gimli = new EnemyDwarf("Gimli");
 
+            gimli.AddToEncounter();
+            gandalf.AddToEncounter();
+
             Console.WriteLine($"Gimli has {gimli.Health} HP.");
             Console.WriteLine($"Gandalf attacks Gimli with {gandalf.AttackValue} Atk.");
 
