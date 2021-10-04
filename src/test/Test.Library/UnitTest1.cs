@@ -1,6 +1,7 @@
 using NUnit.Framework;
+using RoleplayGame;
 
-namespace Test.Library
+namespace RoleplayGame
 {
     public class Tests
     {
@@ -8,11 +9,11 @@ namespace Test.Library
         public void Setup()
         {
         }
-
+      
         [Test]
         public void Test()
         {
-            Assert.Pass();
+           Assert.Pass();
         }
     }
 }
