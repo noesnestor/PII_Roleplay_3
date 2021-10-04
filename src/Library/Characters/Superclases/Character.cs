@@ -67,15 +67,7 @@ namespace RoleplayGame
                 this.health = value < 0 ? 0 : value;
             }
         }   
-        public abstract void ReceiveAttack(Character character);
-
-        public abstract void ReceiveAttack(MagicCharacter character);
-
-        public abstract void Cure();
-
-        public abstract void AddItem(Item item);
-
-        public abstract void RemoveItem(Item item);
+        
     }
 }
     
