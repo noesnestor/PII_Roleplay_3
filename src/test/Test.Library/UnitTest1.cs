@@ -1,6 +1,7 @@
 using NUnit.Framework;
+using RoleplayGame;
 
-namespace Test.Library
+namespace RoleplayGame
 {
     public class Tests
     {
@@ -8,6 +9,14 @@ namespace Test.Library
         public void Setup()
         {
         }
+        /*
+        Para hacer funcionar el Test, por razones que todavía no puedo explicar,
+        tuve que agregar en el Test.Library la dirección entera del almacenamiento del archivo.
+        Seguramente no funcione a menos que se modifique la dirección de referencia de
+        "Test.Library.csproj". Pero entre eso o que simplemente no funcione en ningun momento,
+        por lo menos prefiero que funcione aqui.
+        */
+        
 
         [Test]
         public void TestAtaque()
@@ -26,8 +35,8 @@ namespace Test.Library
         public void TestAgregarHechizo()
         {
             SpellsBook testBook = new SpellsBook();
-            book.AddSpell(new SpellOne());
-            book.AddSpell(new SpellOne());
+            testBook.AddSpell(new SpellOne());
+            testBook.AddSpell(new SpellOne());
 
             int expected = 140;
             Assert.AreEqual(expected, testBook.AttackValue);
@@ -51,6 +60,6 @@ namespace Test.Library
 
             int expected = 100;
             Assert.AreEqual(expected, testDwarf.Health);
-        }   
+        }
     }
 }
