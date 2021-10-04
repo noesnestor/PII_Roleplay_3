@@ -12,11 +12,19 @@ namespace RoleplayGame
             this.AddItem(new Shield());
         }
         
-        public override void ReceiveAttack(int power)
+        public override void ReceiveAttack(Character character)
         {
-            if (this.DefenseValue < power)
+            if (this.DefenseValue < character.AttackValue)
             {
-                this.Health -= power - this.DefenseValue;
+                this.Health -= character.AttackValue - this.DefenseValue;
+            }
+        }
+
+        public override void ReceiveAttack(MagicCharacter character)
+        {
+            if (this.DefenseValue < character.AttackValue)
+            {
+                this.Health -= character.AttackValue - this.DefenseValue;
             }
         }
 
@@ -25,12 +33,12 @@ namespace RoleplayGame
             this.Health = 100;
         }
 
-        public override void AddItem(IItem item)
+        public override void AddItem(Item item)
         {
             this.items.Add(item);
         }
 
-        public override void RemoveItem(IItem item)
+        public override void RemoveItem(Item item)
         {
             this.items.Remove(item);
         }

@@ -1,6 +1,6 @@
 namespace RoleplayGame
 {
-    public class SpellOne: Spell
+    public class Item
     {
     }
 }
