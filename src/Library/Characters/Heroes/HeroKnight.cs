@@ -42,5 +42,9 @@ namespace RoleplayGame
         {
             this.items.Remove(item);
         }
+        public override void AddToEncounter()
+        {
+            Heroes.heroes.Add(this);
+        }
     }
 }
