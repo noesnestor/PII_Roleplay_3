@@ -26,8 +26,8 @@ namespace Test.Library
         public void TestAgregarHechizo()
         {
             SpellsBook testBook = new SpellsBook();
-            book.AddSpell(new SpellOne());
-            book.AddSpell(new SpellOne());
+            testBook.AddSpell(new SpellOne());
+            testBook.AddSpell(new SpellOne());
 
             int expected = 140;
             Assert.AreEqual(expected, testBook.AttackValue);
